@@ -50,7 +50,6 @@ def main():
         if Event_Num:
             context_CJST_1=context_CJST_[3].split(':')
             context_1=context_[3].split(':')
-            #result =  all(elem in context_CJST_1  for elem in context_[1])
             for ii in range(len(context_1)):
                 check_1=bool(round(float(context_CJST_1[ii]))==round(float(context_1[ii])))
                 if not check_1:
@@ -66,25 +65,10 @@ def main():
                     print('='.join(context_CJST_[0:3]).split('[')[0]+'['+str(index_)+']'+context_CJST_1[ii])
 
         if not matched: 
-            print("No events matched here: Run:lumi:Events: {0}:{1}:{1};".format(context_[0], context_[1], context_[2]))
+            print("No events matched here: "+line)
 
         #if index>10:    break
 
-#            result = all(elem in context_CJST_ for elem in  context_)
-#
-#            #result =  all(elem in context_CJST_[0:-4] for elem in context_[0:-5])##without eventweigh ##when with final state -1 is used for reduction 
-#            result =  all(elem in context_CJST_ for elem in context_[0:-1])##without eventweigh ##when with final state -1 is used for reduction 
-#            ###inverse
-#            ###result =  all(elem in context_CJST_[0:-5] for elem in context_)##without eventweigh ##when with final state -1 is used for reduction 
-#            #result =  all(elem in context_CJST_[0:-4]+context_CJST_[-3:29]  for elem in context_[0:-5]+context_[-4:-1])##without eventweigh ##when with final state -1 is used for reduction 
-#            ### compare without met and weigh CJST without MET -2 with MET -3
-#            ##result =  all(elem in context_CJST_[0:12]+context_CJST_[23:26] for elem in context_[0:12]+context_[-8:-5])##without eventweigh ##when with final state -1 is used for reduction 
-#            #result =  all(elem in context_CJST_  for elem in context_)
-#            #result  =  all(elem in context_CJST_  for elem in context_[0:6])
-#            result_ = all(elem in context_CJST_  for elem in context_[0:3])
-#        #if index==1:  print line.strip().split(':',)[0:12]+line.strip().split(':',)[-8:-5]
-#        #if index==1:  print line_diff_.strip().split(':',)[0:12]+line_diff_.strip().split(':',)[23:26]
-        #if index>20:    break
 
 if __name__ == '__main__':
     main()
